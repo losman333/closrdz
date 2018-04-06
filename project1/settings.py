@@ -198,11 +198,16 @@ CMS_LANGUAGES = {
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
-)
+                 # # Customize this
+                 ('home.html', 'home'),
+                 ('about.html', 'about'),
+                 ('contact.html', 'contact'),
+                 ('our_work.html', 'our work'),
+                 ('fullwidth.html', 'Fullwidth'),
+                 ('index-1.html', 'indi'),
+                 ('sidebar_left.html', 'Sidebar Left'),
+                 ('sidebar_right.html', 'Sidebar Right')
+                 )
 
 CMS_PERMISSION = True
 
