@@ -86,11 +86,11 @@ SITE_ID = 1
 
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'project1', 'templates'),],
-        'OPTIONS': {
-            'context_processors': [
+             {
+             'BACKEND': 'django.template.backends.django.DjangoTemplates',
+             'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
+             'OPTIONS': {
+             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
@@ -101,16 +101,19 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'sekizai.context_processors.sekizai',
                 'django.template.context_processors.static',
-                'cms.context_processors.cms_settings'
+                'cms.context_processors.cms_settings',
+                'aldryn_boilerplates.context_processors.boilerplate'
             ],
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-                'django.template.loaders.eggs.Loader'
-            ],
-        },
-    },
-]
+             'loaders': [
+                         'django.template.loaders.filesystem.Loader',
+                         'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
+                         'django.template.loaders.app_directories.Loader',
+                         'django.template.loaders.eggs.Loader'
+                         ],
+             },
+             },
+             ]
+
 
 
 MIDDLEWARE_CLASSES = (
