@@ -1,0 +1,1008 @@
+{% load staticfiles i18n cms_tags menu_tags sekizai_tags %}
+{% load cms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible"  content="IE=edge">
+<title>Bild | The Ultimate Multipurpose Template</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+
+
+
+{% render_block "css" %}
+{{ ALDRYN_SNAKE.render_head }}
+
+</head>
+
+<body>
+    {% cms_toolbar %}
+    <div class="container">
+            {% show_menu 0 100 100 100 %}
+        {% block content %}{% endblock content %}
+    </div>
+    
+<div class="over-loader loader-live">
+    <div class="loader">
+        <div class="loader-item style5">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+</div>
+<!-- end loading--> 
+
+  <div class="site-wrapper">
+    <div class="col-md-12 nopadding">
+      <div class="header-section style1 noborder no-bg fn-mar pin-style">
+        <div class="container">
+          <div class="mod-menu">
+            <div class="row">
+              <div class="col-sm-2"> <a href="index.html" title="" class="logo style-2 mar-4"> <img src="images/logo/logo.png" alt=""> </a> </div>
+              <div class="col-sm-10">
+                <div class="main-nav">
+                  <ul class="nav navbar-nav top-nav">
+                    <li class="search-parent"> <a href="javascript:void(0)" title="" class="m-link"><i aria-hidden="true" class="fa fa-search"></i></a>
+                      <div class="search-box ">
+                        <div class="content">
+                          <div class="form-control">
+                            <input type="text" placeholder="Type to search" />
+                            <a href="#" class="search-btn mar-2"><i aria-hidden="true" class="fa fa-search"></i></a> </div>
+                          <a href="#" class="close-btn mar-1">x</a> </div>
+                      </div>
+                    </li>
+                    <li class="cart-parent"> <a href="javascript:void(0)" title="" class="m-link"> <i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="number mar2"> 2 </span> </a>
+                      <div class="cart-box">
+                        <div class="content">
+                          <div class="row">
+                            <div class="col-xs-8"> 2 item(s) </div>
+                            <div class="col-xs-4 text-right"> <span>$99</span> </div>
+                          </div>
+                          <ul>
+                            <li> <img src="http://via.placeholder.com/80x80" alt=""> Jean & Teashirt <span>$30</span> <a href="#" title="" class="close-btn">x</a> </li>
+                            <li> <img src="http://via.placeholder.com/80x80" alt=""> Jean & Teashirt <span>$30</span> <a href="#" title="" class="close-btn">x</a> </li>
+                          </ul>
+                          <div class="row">
+                            <div class="col-xs-6"> <a href="#" title="View Cart" class="btn btn-block btn-warning">View Cart</a> </div>
+                            <div class="col-xs-6"> <a href="#" title="Check out" class="btn btn-block btn-primary">Check out</a> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="visible-xs menu-icon"> <a href="javascript:void(0)" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false"> <i aria-hidden="true" class="fa fa-bars"></i> </a> </li>
+                  </ul>
+                  <div id="menu" class="collapse">
+                    <ul class="nav navbar-nav">
+                      <li class=" active"> <a href="index.html" class="m-link">Home</a> <span class="arrow"></span>
+                        <ul>
+                              <li> <a href="index-1.html">Home Layout 1</a> </li>
+                              <li> <a href="index-2.html">Home Layout 2</a> </li>
+                              <li> <a href="index-3.html">Home Layout 3</a> </li>
+                              <li> <a href="index-4.html">Home Layout 4</a> </li>
+                              <li> <a href="index.html">Home Default </a> </li>
+                            </ul>
+                      </li>
+                      <li> <a href="page-about3.html" class="m-link">Pages</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="#" class="linkcaps">About <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-about1.html">About Style 1</a> </li>
+                              <li> <a href="page-about2.html">About Style 2</a> </li>
+                              <li> <a href="page-about3.html">About Style 3</a> </li>
+                              <li> <a href="page-about4.html">About Me</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Services <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-services1.html">Services Style 1</a> </li>
+                              <li> <a href="page-services2.html">Services Style 2</a> </li>
+                              <li> <a href="page-services3.html">Services Style 3</a> </li>
+                              <li> <a href="page-services4.html">Services Style 4</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Team <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-team-classic.html">Team Classic</a> </li>
+                              <li> <a href="page-team-creative.html">Team Creative</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">FAQ <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-faq1.html">FAQ Style 1</a> </li>
+                              <li> <a href="page-faq2.html">FAQ Style 2</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Contact<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-contact.html">Contact Classic</a> </li>
+                              <li> <a href="page-contact-left-sidebar.html">Contact Left Sidebar</a> </li>
+                              <li> <a href="page-contact-right-sidebar.html">Contact Right Sidebar</a> </li>
+                              <li> <a href="page-contact-map.html">Full Width Map</a> </li>
+                              <li> <a href="page-contact-parallax.html">Contact Parallax</a> </li>
+                              <li> <a href="page-contact-captcha.php">Contact With Captcha</a> </li>
+                            </ul>
+                          </li>
+                          
+                          <li> <a href="#" class="linkcaps">Other Pages <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-login.html">Login</a></li>
+                              <li> <a href="page-register.html">Register</a></li>
+                              <li> <a href="page-sitemap.html">Sitemap</a></li>
+                              <li> <a href="page-404.html">404 Error Page</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li> <a href="index-3.html" class="m-link">Features</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          
+                          <li> <a href="#" class="linkcaps">Headers <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index-3.html">Header Dark</a> </li>
+                              <li> <a href="index-1.html">Header Transparent</a> </li>
+                              <li> <a href="index-2.html">Header White</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Menu Styles <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index.html">Menu Transparent</a> </li>
+                              <li> <a href="index-2.html">Menu White</a> </li>
+                              <li> <a href="index-3.html">Menu Dark</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Loading Styles<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="loading-style1.html">Loading Style 1</a> </li>
+                              <li> <a href="loading-style2.html">Loading Style 2</a> </li>
+                              <li> <a href="loading-style3.html">Loading Style 3</a> </li>
+                              <li> <a href="loading-style4.html">Loading Style 4</a> </li>
+                              <li> <a href="loading-style5.html">Loading Style 5</a> </li>
+                              <li> <a href="loading-style6.html">Loading Style 6</a> </li>
+                              <li> <a href="loading-style7.html">Loading Style 7</a> </li>
+                              <li> <a href="loading-style8.html">Loading Style 8</a> </li>
+                              <li> <a href="loading-style9.html">Loading Style 9</a> </li>
+                              <li> <a href="loading-style10.html">Loading Style 10</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Footer Styles<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index-3.html">Footer Dark</a> </li>
+                              <li> <a href="index-4.html">Footer Light</a> </li>
+                              <li> <a href="index-2.html">Footer Simple</a> </li>
+                            </ul>
+                          </li>
+                          
+                        </ul>
+                      </li>
+                      <li class="mega-menu"> <a href="header-style3.html" class="m-link">Portfolio</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="#" title="home samples">Portfolio columns</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-1-columns.html"><i class="fa fa-angle-right"></i>&nbsp; One Column</a> </li>
+                              <li> <a href="portfolio-2-columns.html"><i class="fa fa-angle-right"></i>&nbsp; Two Column</a> </li>
+                              <li> <a href="portfolio-3-columns.html"><i class="fa fa-angle-right"></i>&nbsp; Three Column</a> </li>
+                              <li> <a href="portfolio-4-columns.html"><i class="fa fa-angle-right"></i>&nbsp; Four Column</a> </li>
+                              <li> <a href="portfolio-5-columns.html"><i class="fa fa-angle-right"></i>&nbsp; Five Column</a> </li>
+                              <li> <a href="portfolio-6-columns.html"><i class="fa fa-angle-right"></i>&nbsp; Six Column</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Styles</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-masonry.html"><i class="fa fa-angle-right"></i>&nbsp; Masonry</a> </li>
+                              <li> <a href="portfolio-masonry-projects.html"><i class="fa fa-angle-right"></i>&nbsp; Masonry-Projects</a> </li>
+                              <li> <a href="portfolio-mosaic.html"><i class="fa fa-angle-right"></i>&nbsp; Mosaic</a> </li>
+                              <li> <a href="portfolio-mosaic-flat.html"><i class="fa fa-angle-right"></i>&nbsp; Mosaic-Flat</a> </li>
+                              <li> <a href="portfolio-mosaic-projects.html"><i class="fa fa-angle-right"></i>&nbsp; Mosaic-Projects</a> </li>
+                              
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Styles</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-full-width.html"><i class="fa fa-angle-right"></i>&nbsp; Full Width</a> </li>
+                              <li> <a href="portfolio-classic.html"><i class="fa fa-angle-right"></i>&nbsp; Classic</a> </li>
+                              <li> <a href="portfolio-nospace.html"><i class="fa fa-angle-right"></i>&nbsp; No Space</a> </li>
+                              <li> <a href="portfolio-boxed-size.html"><i class="fa fa-angle-right"></i>&nbsp; Boxed Size</a> </li>
+                              <li> <a href="portfolio-modern.html"><i class="fa fa-angle-right"></i>&nbsp; Modern</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Single Page</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-left-sidebar.html"><i class="fa fa-angle-right"></i>&nbsp; Left Sidebar</a> </li>
+                              <li> <a href="portfolio-right-sidebar.html"><i class="fa fa-angle-right"></i>&nbsp; Right Sidebar</a> </li>
+                              <li> <a href="portfolio-carousel.html"><i class="fa fa-angle-right"></i>&nbsp; Carousel</a> </li>
+                              <li> <a href="portfolio-slider-projects.html"><i class="fa fa-angle-right"></i>&nbsp; slider-projects</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="mega-menu five-col"> <a href="carousel-sliders.html" class="m-link">Shortcodes</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="#">Shortcodes 1</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-accordions.html"><i class="fa fa-plus-circle"></i> &nbsp; Accordions</a> </li>
+                              <li><a href="shortcodes-alerts.html"><i class="fa fa-exclamation" aria-hidden="true"></i> &nbsp; Alerts</a> </li>
+                              <li><a href="shortcodes-animations.html"><i class="fa fa-bars"></i> &nbsp; Animations</a> </li>
+                              <li><a href="shortcodes-blockquotes.html"><i class="fa fa-quote-right" aria-hidden="true"></i> &nbsp; Blockquotes</a> </li>
+                              <li><a href="shortcodes-breadcrumbs.html"><i class="fa fa-share" aria-hidden="true"></i> &nbsp; Breadcrumbs</a> </li>
+                              <li><a href="shortcodes-buttons.html"><i class="fa fa-external-link" aria-hidden="true"></i> &nbsp; Buttons</a> </li>
+                              <li><a href="shortcodes-call-to-action.html"><i class="fa fa-level-up" aria-hidden="true"></i> &nbsp; Call to Action</a> </li>
+                              <li><a href="shortcodes-clients-logos.html"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Clients Logos</a> </li>
+                              <li><a href="shortcodes-carousel-sliders.html"><i class="fa fa-sort" aria-hidden="true"></i> &nbsp; Carousel Sliders</a> </li>
+                              <li><a href="shortcodes-counters.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Counters</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcodes 2</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-content-boxes.html"><i class="fa fa-th" aria-hidden="true"></i> &nbsp; Content Boxes</a> </li>
+                              <li><a href="shortcodes-data-tables.html"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Data Tables</a> </li>
+                              <li><a href="shortcodes-date-pickers.html"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Date Pickers</a> </li>
+                              <li><a href="shortcodes-dropcaps.html"><i class="fa fa-font" aria-hidden="true"></i> &nbsp; Dropcap & Highlight</a> </li>
+                              <li><a href="shortcodes-dividers.html"><i class="fa fa-minus" aria-hidden="true"></i> &nbsp; Dividers</a> </li>
+                              <li><a href="shortcodes-file-uploads.html"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp; File Uploads</a> </li>
+                              <li><a href="shortcodes-forms.html"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; Forms</a> </li>
+                              <li><a href="shortcodes-grids.html"><i class="fa fa-th-list" aria-hidden="true"></i> &nbsp; Grids</a> </li>
+                              <li><a href="shortcodes-heading-styles.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Heading Styles</a> </li>
+                              <li><a href="shortcodes-hover-styles.html"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; Hover Styles</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcodes 3</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-icon-boxes.html"><i class="fa fa-th-large" aria-hidden="true"></i> &nbsp; Icon Boxes</a> </li>
+                              <li><a href="shortcodes-icon-circles.html"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp; Icon Circles</a> </li>
+                              <li><a href="shortcodes-countdown-timers.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Countdown Timers</a> </li>
+                              <li><a href="shortcodes-icon-lists.html"><i class="fa fa-list" aria-hidden="true"></i> &nbsp; Icon Lists</a> </li>
+                              <li><a href="shortcodes-images.html"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; Images</a> </li>
+                              <li><a href="shortcodes-labels-and-badges.html"><i class="fa fa-adjust" aria-hidden="true"></i> &nbsp; Labels and Badges</a> </li>
+                              <li><a href="shortcodes-lightbox.html"><i class="fa fa-th" aria-hidden="true"></i> &nbsp; Lightbox</a> </li>
+                              <li><a href="shortcodes-lists.html"><i class="fa fa-list-ul" aria-hidden="true"></i> &nbsp; Lists</a> </li>
+                              <li><a href="shortcodes-maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Maps</a> </li>
+                              <li><a href="shortcodes-modal-popup.html"><i class="fa fa-search-plus" aria-hidden="true"></i> &nbsp; Modal Popup</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcode 4</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-pagenation.html"><i class="fa fa-exchange" aria-hidden="true"></i> &nbsp; Pagenation</a> </li>
+                              <li><a href="shortcodes-parallax-backgrounds.html"><i class="fa fa-align-center" aria-hidden="true"></i> &nbsp; Parallax Backgrounds</a> </li>
+                              <li><a href="shortcodes-pricing-tables.html"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Pricing Tables</a> </li>
+                              <li><a href="shortcodes-pie-charts.html"><i class="fa fa-pie-chart" aria-hidden="true"></i> &nbsp; Pie Charts</a> </li>
+                              <li><a href="shortcodes-progress-bars.html"><i class="fa fa-outdent" aria-hidden="true"></i> &nbsp; Progress Bars</a> </li>
+                              <li><a href="shortcodes-process-steps.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> &nbsp; Process Steps</a></li>
+                              <li><a href="shortcodes-post-styles.html"><i class="fa fa-pencil" aria-hidden="true"></i> &nbsp; Post Styles</a> </li>
+                              <li><a href="shortcodes-toogle-switches.html"><i class="fa fa-toggle-on" aria-hidden="true"></i> &nbsp; Toogle Switches</a> </li>
+                              <li><a href="shortcodes-timeline.html"><i class="fa fa-align-left" aria-hidden="true"></i> &nbsp; Timeline</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcode 5</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-star-ratings.html"><i class="fa fa-star-half-o" aria-hidden="true"></i> &nbsp; Star Ratings</a> </li>
+                              <li><a href="shortcodes-sections.html"><i class="fa fa-square-o" aria-hidden="true"></i> &nbsp; Sections</a> </li>
+                              <li><a href="shortcodes-social-icons.html"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Social Icons</a> </li>
+                              <li><a href="shortcodes-tabs.html"><i class="fa fa-th-large" aria-hidden="true"></i> &nbsp; Tabs</a> </li>
+                              <li><a href="shortcodes-team.html"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Team</a> </li>
+                              <li><a href="shortcodes-testimonials.html"><i class="fa fa-pencil-square"></i> &nbsp; Testimonials</a> </li>
+                              <li><a href="shortcodes-tooltips.html"><i class="fa fa-font" aria-hidden="true"></i> &nbsp; Tooltips</a> </li>
+                              <li><a href="shortcodes-toogles.html"><i class="fa fa-toggle-on" aria-hidden="true"></i> &nbsp; Toogles</a> </li>
+                              <li><a href="shortcodes-typography.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Typography</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="right"> <a href="#" class="m-link">Blog</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="#" class="linkcaps">Classic <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-full-width.html">Full Width</a> </li>
+                              <li> <a href="blog-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="blog-right-sidebar.html">Right Sidebar</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Grids <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-1-columns.html">One Column</a> </li>
+                              <li> <a href="blog-2-columns.html">Two Column</a> </li>
+                              <li> <a href="blog-3-columns.html">Three Column</a> </li>
+                              <li> <a href="blog-4-columns.html">Four Column</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#" class="linkcaps">Default<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-default-full-width.html">Full Width</a> </li>
+                              <li> <a href="blog-default-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="blog-default-right-sidebar.html">Right Sidebar</a> </li>
+                              <li> <a href="blog-default-author.html">Author Page</a> </li>
+                              <li> <a href="blog-default-comments.html">Blog Comments</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="right"> <a href="#" class="m-link">Contact</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="page-contact.html">Contact Classic</a> </li>
+                          <li> <a href="page-contact-left-sidebar.html">Contact Left Sidebar</a> </li>
+                          <li> <a href="page-contact-right-sidebar.html">Contact Right Sidebar</a> </li>
+                          <li> <a href="page-contact-map.html">Full Width Map</a> </li>
+                          <li> <a href="page-contact-parallax.html">Contact Parallax</a> </li>
+                          <li> <a href="page-contact-captcha.php">Contact With Captcha</a> </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end menu--> 
+      
+    </div>
+    <!--end menu-->
+    
+    <div class="clearfix"></div>
+    
+    
+    <!-- START REVOLUTION SLIDER 5.0 -->
+    <div class="slide-tmargin">
+      <div class="slidermaxwidth">
+        <div class="rev_slider_wrapper"> 
+          <!-- START REVOLUTION SLIDER 5.0 auto mode -->
+          <div id="rev_slider" class="rev_slider"  data-version="5.0">
+            <ul>
+              
+              <!-- SLIDE 1  -->
+              <li data-index="rs-1" data-transition="fade" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="" data-description=""> 
+                
+                <!-- MAIN IMAGE --> 
+                <img src="http://via.placeholder.com/1920x810" alt=""  data-bgposition="center center" data-kenburns="off" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 -500" data-offsetend="0 500" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+                 
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption Gym-Display fweight-8 white uppercase tp-resizeme" 
+                     id="slide-1-layer-1" 
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                     data-y="['top','top','top','top']" data-voffset="['350','318','130','75']" 
+                     data-fontsize="['100','50','50','35']"
+                     data-lineheight="['100','50','50','35']"
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+                    
+                     data-type="text" 
+                     data-responsive_offset="on" 
+                    
+                     data-frames='[{"delay":1400,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+        
+                     style="z-index: 7; white-space: nowrap;"> we are <span class="text-primary"> creative</span>  <br />builders
+                </div>
+    			
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption Gym-Display fweight-6 white tp-resizeme" 
+                     id="slide-1-layer-2" 
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                     data-y="['top','top','top','top']" data-voffset="['550','245','220','130']" 
+                     data-fontsize="['16','16','14','10']"
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+                    
+                     data-type="text" 
+                     data-responsive_offset="on" 
+                    
+                     data-frames='[{"delay":1500,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+        
+                    style="z-index: 7; white-space: nowrap;">YOU HAVE DREAMS? We will make it come true!
+
+                </div>                
+    
+    
+                <!-- LAYER NR. 3 -->
+                <div class="tp-caption"
+                    id="slide-1-layer-3"
+                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                    data-y="['top','top','top','top']" data-voffset="['640','440','310','220']"
+                    data-frames='[{"delay":1600,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+                    
+                    style="z-index: 6"> <a href="#" class="slider-but-1 roboto font-weight-7 uppercase">Purchase Now</a>
+                </div>
+                
+            </li>
+              
+            
+            <!-- SLIDE 2  -->
+              <li data-index="rs-2" data-transition="fade" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="" data-description=""> 
+                
+                <!-- MAIN IMAGE --> 
+                <img src="http://via.placeholder.com/1920x810" alt=""  data-bgposition="center center" data-kenburns="off" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 -500" data-offsetend="0 500" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+                 
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption Gym-Display fweight-8 white uppercase tp-resizeme" 
+                     id="slide-2-layer-1" 
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                     data-y="['top','top','top','top']" data-voffset="['350','318','130','75']" 
+                     data-fontsize="['100','50','50','35']"
+                     data-lineheight="['100','50','50','35']"
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+                    
+                     data-type="text" 
+                     data-responsive_offset="on" 
+                    
+                     data-frames='[{"delay":1400,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+        
+                     style="z-index: 7; white-space: nowrap;">we<span class="text-primary"> deliver</span> <br />websites
+                </div>
+    			
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption Gym-Display fweight-6 white tp-resizeme" 
+                     id="slide-2-layer-2" 
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                     data-y="['top','top','top','top']" data-voffset="['550','245','220','130']" 
+                     data-fontsize="['16','16','14','10']"
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+                    
+                     data-type="text" 
+                     data-responsive_offset="on" 
+                    
+                     data-frames='[{"delay":1500,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+        
+                    style="z-index: 7; white-space: nowrap;">A Professional Creativity Clean Featured Theme Let’s Start an Awesome Project Now!
+                </div>                
+    
+    
+                <!-- LAYER NR. 3 -->
+                <div class="tp-caption"
+                    id="slide-3-layer-3"
+                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                    data-y="['top','top','top','top']" data-voffset="['640','440','310','220']"
+                    data-frames='[{"delay":1600,"speed":500,"frame":"0","from":"y:100px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                     data-textAlign="['center','center','center','center']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+                    
+                    style="z-index: 6"> <a href="#" class="slider-but-1 roboto font-weight-7 uppercase">Purchase Now</a>
+                </div>
+                
+            </li>
+       
+			</ul>
+          <!-- END REVOLUTION SLIDER --> 
+          </div>
+        </div>
+      </div>
+      <!-- END REVOLUTION SLIDER WRAPPER --> 
+    </div>
+    <div class="clearfix"></div>
+    <!-- END OF SLIDER WRAPPER -->
+    
+<section class="sec-padding">
+  <div class="container">
+    <div class="row">
+
+
+		<div class="col-md-12 nopadding animate-in" data-anim-type="fade-in-up" data-anim-delay="300">
+            <div class="sec-title-container less-padding-3 text-center">
+              <h2 class="font-weight-7 uppercase text-center"> Our Services </h2>
+              <p class="line-height-2 text-gray less8">There are variations available majoritaey suffered alteration words which look believable <br/>
+                dolor sit amet consectetuer adipiscing elit suspendisse justdo structure versions.</p>
+            </div>
+          </div>
+          <!--end title-->
+
+      
+      <div class="col-md-12 nopadding">
+      
+      	<div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-up" data-anim-delay="100">
+        	<div class="text-box padding-2 text-center hover-shadow-1">
+                <div class="icon-plain-medium margin-bottom-2"><i class="fa fa-building text-primary" aria-hidden="true"></i></div>
+                <h5 class="font-weight-6 margin-bottom-1"> GENERAL <br/> BUILDER </h5>
+                <p>We need sure generate the internet to repeat predefine.</p>
+            </div>
+        </div><!-- end item -->
+        
+        <div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-up" data-anim-delay="250">
+        	<div class="text-box padding-2 text-center hover-shadow-1">
+                <div class="icon-plain-medium margin-bottom-2"><i class="fa fa-connectdevelop text-primary" aria-hidden="true"></i></div>
+                <h5 class="font-weight-6 margin-bottom-1">RECONSTRUCTION <br/>  SERVICES</h5>
+                <p>We need sure generate the internet to repeat predefine.</p>
+            </div>
+        </div><!-- end item -->
+        
+        <div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-up" data-anim-delay="400">
+        	<div class="text-box padding-2 text-center hover-shadow-1 active">
+                <div class="icon-plain-medium margin-bottom-2"><i class="fa fa-deviantart text-primary" aria-hidden="true"></i></div>
+                <h5 class="font-weight-6 margin-bottom-1">ARCHITECTURAL  <br />DESIGN</h5>
+                <p>We need sure generate the internet to repeat predefine.</p>
+            </div>
+        </div><!-- end item -->
+        
+        <div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-up" data-anim-delay="550">
+        	<div class="text-box padding-2 text-center hover-shadow-1">
+                <div class="icon-plain-medium margin-bottom-2"><i class="fa fa-barcode text-primary" aria-hidden="true"></i></div>
+                <h5 class="font-weight-6 margin-bottom-1"> INSTANT  <br />SOLUTIONS</h5>
+                <p>We need sure generate the internet to repeat predefine.</p>
+            </div>
+        </div><!-- end item -->
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clearfix"></div>
+<!-- end section -->
+
+	
+
+
+
+<div class="sec-padding section-fulldark background-image06">
+<div class="container">
+<div class="row nopadding">
+
+
+   <div class="col-md-12">
+            <div class="sec-title-container less-padding-3 text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
+              <h2 class="font-weight-7 text-white uppercase text-center"> What We Do </h2>
+              <p class="line-height-2 text-white  less8">There are variations available majoritaey suffered alteration words which look believable <br/>
+                dolor sit amet consectetuer adipiscing elit suspendisse justdo structure versions.</p>
+            </div>
+            </div>
+          <div class="clearfix margin-bottom-2"></div>
+          <!--end title-->
+          
+	<div class="feature-box-9">
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
+        <div class="icon"><img src="images/ft-icon13-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">House Renovation</h4>
+        <p class="sfont ">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
+        <div class="icon"><img src="images/ft-icon2-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">Perfectly Structured</h4>
+        <p class="sfont white">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
+        <div class="icon"><img src="images/ft-icon7-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">Powerful Results</h4>
+        <p class="sfont white">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+    <div class="clearfix margin-bottom-5"></div>
+    
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="400">
+        <div class="icon"><img src="images/ft-icon8-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">General Contracting</h4>
+        <p class="sfont ">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="400">
+        <div class="icon"><img src="images/ft-icon3-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">Metal Roofing</h4>
+        <p class="sfont white">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+    <div class="col-md-4 col-sm-12 animate-in" data-anim-type="fade-in-up" data-anim-delay="400">
+        <div class="icon"><img src="images/ft-icon1-white.png" alt="" class="img-responsive" /></div>
+        <h4 class="text-white font-weight-5 margin-bottom-1">Laminate Flooring</h4>
+        <p class="sfont white">Sectron remain essentia senea prin typesetting industry sometimes on purpose here always</p>
+	</div><!-- end col -->
+    
+</div>
+ 
+
+</div>
+</div>
+</div><!-- end section -->
+<div class="clearfix"></div>
+
+
+<div class="sec-padding section-light ">
+      <div class="container">
+      <div class="row">
+          <div class="col-md-6 section-white text-page-center">
+          <div class="text-box padding-percent-4 animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
+              <h2 class="font-weight-4">General Builder </h2>
+              <p class="line-height-5">All the Ipsum generators on the Internet tend to repeat predefined chunks as first true generator words on the Internet.</p>
+              <br />
+              <a href="index-1.html" class="smallfont3 darkgray caps lspace-sm">View Project
+            <div class="link-hover-bline"></div>
+            </a> </div>
+        </div>
+          <!-- end col -->
+          
+          <div class="col-md-6 text-page-center animate-in" data-anim-type="fade-in-right" data-anim-delay="300">
+          <div class="zoomimg4"><img src="http://via.placeholder.com/600x400" class="img-responsive" alt=""/></div>
+        </div>
+          <!-- end col --> 
+          
+          <div class="clearfix margin-bottom-2"></div>
+          
+           <div class="col-md-6 text-page-center animate-in" data-anim-type="fade-in-left" data-anim-delay="300">
+          <div class="zoomimg4"><img src="http://via.placeholder.com/600x400" class="img-responsive" alt=""/></div>
+        </div>
+          <!-- end col --> 
+          
+          <div class="col-md-6 section-primary text-page-center">
+          <div class="text-box padding-percent-4 animate-in" data-anim-type="fade-in-up" data-anim-delay="300">
+              <h2 class="font-weight-4 text-white">Architectural Design </h2>
+              <p class="line-height-5 text-white">All the Ipsum generators on the Internet tend to repeat predefined chunks as first true generator words on the Internet.</p>
+              <br />
+              <a href="index-1.html" class="smallfont3 text-white caps lspace-sm">View Project
+            <div class="link-hover-bline"></div>
+            </a> </div>
+        </div>
+          <!-- end col -->
+          
+        </div>
+    </div>
+    </div>
+<!-- end section -->
+<div class="clearfix"></div>
+
+	    
+<section class="padding-top-8 padding-bottom-8 section-fulldark">
+<div class="row nopadding">
+<div class="container">
+
+	<div class="col-md-4 col-xs-12 marbo-resp animate-in" data-anim-type="fade-in-up" data-anim-delay="250">
+		<h2 class=" text-primary uppercase font-weight-7 margin-bottom">What People Says About Theme</h2>
+        <hr class="style-one text-white quarter">
+        <p class="clearfix margin-bottom"></p>
+        <h5 class="text-white font-weight-4 line-height-3">All the Lorem generators on the Internet tend to repeat predefined generator on the Internet sentence looks reasonable is always.</h5>
+    </div><!-- end col -->
+	
+    <div class="col-md-8 col-xs-12">
+    	<div id="owl-demo3" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="col-md-6 col-xs-12 marbo-resp">
+                <div class="less5">
+                     <p class="text-white font-weight-4 line-height-3 margin-bottom-3">" It was popularised in the release more recently with desktop publish software like including versions. If you are going to use a passage of you need to be sure there generators on the tend chunks as making this the first true on the Internet. "</p>
+                    <img src="http://via.placeholder.com/80x80" alt="" class="respoimg4 radius5 margin-right2 left" />
+                    <h6 class="small text-white font-weight-5 margin-bottom-1">Alex Jacobson</h6>
+                    <h6 class="small3 text-white font-weight-4 margin-bottom-2">Consulting Manger</h6>
+                </div>
+                </div>
+                
+                <div class="col-md-6 col-xs-12 marbo-resp">
+                <div class="less5">
+                    <p class="text-white font-weight-4 line-height-3 margin-bottom-3">" It was popularised in the release more recently with desktop publish software like including versions. If you are going to use a passage of you need to be sure there generators on the tend chunks as making this the first true on the Internet. "</p>
+                    <img src="http://via.placeholder.com/80x80" alt="" class="respoimg4 radius5 margin-right2 left" />
+                    <h6 class="small text-white font-weight-5 margin-bottom-1">Alex Jacobson</h6>
+                    <h6 class="small3 text-white font-weight-4 margin-bottom-2">Consulting Manger</h6>
+                </div>
+                </div>
+			</div><!-- end item slide -->
+            
+            <div class="item">
+                <div class="col-md-6 col-xs-12 marbo-resp">
+                <div class="less5">
+                    <p class="text-white font-weight-4 line-height-3 margin-bottom-3">" It was popularised in the release more recently with desktop publish software like including versions. If you are going to use a passage of you need to be sure there generators on the tend chunks as making this the first true on the Internet. "</p>
+                    <img src="http://via.placeholder.com/80x80" alt="" class="respoimg4 radius5 margin-right2 left" />
+                    <h6 class="small text-white font-weight-5 margin-bottom-1">Alex Jacobson</h6>
+                    <h6 class="small3 text-white font-weight-4 margin-bottom-2">Consulting Manger</h6>
+                </div>
+                </div>
+                
+                <div class="col-md-6 col-xs-12 marbo-resp">
+                <div class="less5">
+                     <p class="text-white font-weight-4 line-height-3 margin-bottom-3">" It was popularised in the release more recently with desktop publish software like including versions. If you are going to use a passage of you need to be sure there generators on the tend chunks as making this the first true on the Internet. "</p>
+                    <img src="http://via.placeholder.com/80x80" alt="" class="respoimg4 radius5 margin-right2 left" />
+                    <h6 class="small text-white font-weight-5 margin-bottom-1">Alex Jacobson</h6>
+                    <h6 class="small3 text-white font-weight-4 margin-bottom-2">Consulting Manger</h6>
+                </div>
+                </div>
+			</div><!-- end item slide -->
+                                        
+		</div>
+    </div>
+    
+	
+</div>        
+</div>
+</section><!-- end section -->
+
+		<section class="feature-box-7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 text-center  animate-in" data-anim-type="fade-in-right" data-anim-delay="250">
+                        <h1>Call Us @01-2451784</h1>
+                        <h3>Enjoy our 24/7 support</h3>
+                    </div>
+                    <div class="col-md-4 col-sm-4 animate-in" data-anim-type="fade-in-left" data-anim-delay="250"><div class=" margin-top-4"> <a href="#" class="but-stbutton-8 text-small uppercase lspace-sm2 margin-left-1">Contact us <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div></div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section  -->
+        
+	
+       <div class="footer">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4 col-sm-4 animate-in" data-anim-type="fade-in-right" data-anim-delay="250">
+        <div class="item-holder margin-bottom-2">
+        <h3 class="title">Address </h3>
+            <div class="title_line"></div>
+            <span class="address">Address: No.16 - 895214 street gulbarg City, Country</span> <span class="address">Phone: + 1 (234) 567 8901</span> <span class="address">Fax: + 1 (234) 875421358</span> <span class="address">Email: support@yournewwebsite.com </span> </div> </div>
+          <!--end item-->
+          
+          <div class="col-md-4 col-sm-4 animate-in" data-anim-type="fade-in-up" data-anim-delay="250">
+           <div class="item-holder margin-bottom-2">
+            <h3 class="title">Tags</h3>
+            <div class="title_line"></div>
+            <ul class="tags ">
+              <li><a href="#">Awesome</a></li>
+              <li><a href="#" class="active">Photography</a></li>
+              <li><a href="#">UI DEsign</a></li>
+              <li><a href="#">Branding</a></li>
+              <li><a href="#">All</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Creative</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Wireframe</a></li>
+            </ul>
+          </div></div>
+          <!--end item-->
+          
+          <div class="col-md-4 col-sm-4  animate-in" data-anim-type="fade-in-left" data-anim-delay="250">
+          <div class="item-holder margin-bottom-2">
+            <h3 class="title ">Useful Links</h3>
+            <div class="title_line"></div>
+            
+             <div class="qlinks">
+        
+            <ul>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Home Page Variations</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Awsome Slidershows</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Features and Typography</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Different &amp; Unique Pages</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Single and Portfolios</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Recent Blogs or News</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Layered PSD Files</a></li>
+              
+            </ul>
+            
+        </div></div>
+            
+          </div>
+          <!--end item-->
+          
+         
+          <div class="divider_line"></div>
+
+          <div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-left" data-anim-delay="250">
+            <div class="newsletter ">
+              <input class="email_input" type="search" placeholder="Email Address">
+              <input name="Submit" value="Submit" class="email_submit " type="submit">
+            </div>
+          </div>
+          <!--end item-->       
+          
+         <div class="col-md-6 col-sm-6 animate-in" data-anim-type="fade-in-up" data-anim-delay="250">
+         <div class="item-holder">
+            <div class="quick_links_holder ">
+              <ul class="quick_links ">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#" class="last">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+           </div>
+          <!--end item-->
+          
+          <div class="col-md-3 col-sm-6 animate-in" data-anim-type="fade-in-right" data-anim-delay="250">
+            <div class="social_icons_holder ">
+              <ul class="social_icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="active "><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="last"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!--end item-->
+          
+        </div>
+      </div></div>
+    <!--end fotter-->
+    <div class="clearfix"></div>
+  
+  
+    <div class="copyrights ">
+    <div class="container text-center"><span>Copyright © 2018<br/> Design & Developed by codedesigner</span></div>
+    </div>
+  <!--end copyrights--> 
+
+    
+   <a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
+    
+</div><!--end site wrapper--> 
+
+
+
+<!-- Scripts --> 
+<script src="{% static 'js/jquery/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+<!-- Scripts END --> 
+
+<!-- Template scripts --> 
+<script src="{% static 'js/megamenu/js/main.js' % }"></script>
+<script src="{% static 'js/owl-carousel/owl.carousel.js' % }"></script>
+<script src="{% static 'js/owl-carousel/custom.js' % }"></script>
+
+<!-- REVOLUTION JS FILES --> 
+<script src="{% static 'js/revolution-slider/js/jquery.themepunch.tools.min.js' % }"></script>
+<script src="{% static 'js/revolution-slider/js/jquery.themepunch.revolution.min.js' % }"></script>
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+(Load Extensions only on Local File Systems ! 
+The following part can be removed on Server for On Demand Loading) --> 
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.actions.min.js' % }"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.carousel.min.js' % }"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js' % }"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.migration.min.js' % }"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'js/revolution-slider/js/extensions/revolution.extension.video.min.js' % }"></script>
+
+<script>
+	var tpj=jQuery;			
+	var revapi4;
+	tpj(document).ready(function() {
+	if(tpj("#rev_slider").revolution == undefined){
+	revslider_showDoubleJqueryError("#rev_slider");
+	}else{
+		revapi4 = tpj("#rev_slider").show().revolution({
+		sliderType:"standard",
+		jsFileLocation:"js/revolution-slider/js/",
+		sliderLayout:"auto",
+		dottedOverlay:"none",
+		delay:9000,
+		navigation: {
+		keyboardNavigation:"off",
+		keyboard_direction: "horizontal",
+		mouseScrollNavigation:"off",
+		onHoverStop:"off",
+		arrows: {
+		style:"uranus",
+		enable:true,
+		hide_onmobile:false,
+		hide_under:100,
+		hide_onleave:true,
+		hide_delay:200,
+		hide_delay_mobile:1200,
+		tmp:'',
+		left: {
+		h_align:"left",
+		v_align:"center",
+		h_offset:35,
+		v_offset:0
+		},
+		right: {
+		h_align:"right",
+		v_align:"center",
+		h_offset:35,
+		v_offset:0
+		}
+		}
+		,
+		touch:{
+		touchenabled:"on",
+		swipe_threshold: 75,
+		swipe_min_touches: 1,
+		swipe_direction: "horizontal",
+		drag_block_vertical: false
+	}
+	,
+										
+										
+										
+	},
+		viewPort: {
+		enable:true,
+		outof:"pause",
+		visible_area:"80%"
+	},
+	
+	responsiveLevels:[1240,1024,778,480],
+	gridwidth:[1240,1024,778,480],
+	 gridheight: [900,750,500,360],
+	lazyType:"smart",
+		parallax: {
+		type:"mouse",
+		origo:"slidercenter",
+		speed:2000,
+		levels:[2,3,4,5,6,7,12,16,10,50],
+		},
+	shadow:0,
+	spinner:"off",
+	stopLoop:"off",
+	stopAfterLoops:-1,
+	stopAtSlide:-1,
+	shuffle:"off",
+	autoHeight:"off",
+	hideThumbsOnMobile:"off",
+	hideSliderAtLimit:0,
+	hideCaptionAtLimit:0,
+	hideAllCaptionAtLilmit:0,
+	disableProgressBar:"on",
+	debugMode:false,
+		fallbacks: {
+		simplifyAll:"off",
+		nextSlideOnBilddowFocus:"off",
+		disableFocusListener:false,
+		}
+	});
+	}
+	});	/*ready*/
+</script> 
+
+
+<script src= "{% static 'js/jFlickrFeed/jflickrfeed.min.js' %}"></script>
+<script>
+$('#basicuse').jflickrfeed({
+limit: 6,
+qstrings: {
+id: '133294431@N08'
+},
+itemTemplate: 
+'<li>' +
+'<a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
+'</li>'
+});
+</script>
+  
+<script>
+    $(window).load(function(){
+      setTimeout(function(){
+
+        $('.loader-live').fadeOut();
+      },1000);
+    })
+
+</script>
+<script src="{% static 'js/animations/js/animations.min.js' %}"></script>
+<script src="{% static 'js/animations/js/appear.min.js' %}"></script>
+<script src="{% static 'js/functions/functions.js' % }"></script>
+{% render_block "js" %}
+</body>
+</html>

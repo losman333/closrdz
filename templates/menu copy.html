@@ -1,0 +1,39 @@
+{% load menu_tags %}
+{% load menu_tags %}
+
+{% for child in children %}
+<li class="child{% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+    <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+    {% if child.children %}
+    <ul>
+        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
+`
+<div data-sticky-container>
+    <div class="top-bar" data-sticky data-margin-top="0" id="example-menu">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">AR Contract Glazing</li>
+                
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu" data-magellan>
+                <li><a href="#first">Home</a></li>
+                <li><a href="#second">About</a></li>
+                <li><a href="#third">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row demo-toggle-title">
+    <div class="columns">
+        <div class="grid-container fluid">
+        <div class="sections">
+
+
+                    

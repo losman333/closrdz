@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="grid-container">
+    <br>
+    <h1>The Latest Projects</h1>
+    <hr>
+    <br>
+
+    <div class="grid-x grid-margin-x small-up-12 medium-up-4 large-up-3">
+{% for article in articles_list %}
+
+<div class="cell">
+  
+    {% include "aldryn_newsblog/includes/featured.html" with namespace=instance.app_config.namespace %}
+    </div>
+
+{% empty %}
+    <p>{% trans "No items available" %}</p>
+{% endfor %}
+
+</div>
+
+ </div>

@@ -1,0 +1,35 @@
+{% load staticfiles i18n cms_tags menu_tags sekizai_tags %}
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+            <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+            <link rel="stylesheet" href="{% static 'css/app.css' %}">
+                <script src="{% static 'js/vendor/jquery.js' %}"></script>
+                <script src="{% static 'js/vendor/what-input.js' %}"></script>
+
+
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+     
+                {% show_menu 0 100 100 100 "menu.html" %}
+              
+                            
+                            
+                      
+            {% block content %}{% endblock content %}
+        </div>
+        
+        
+        <script src="{% static 'js/vendor/foundation.js' %}"></script>
+        
+        <script src="{% static 'js/app.js' %}"></script>
+        {% render_block "js" %}
+        
+        
+        
+    </body>
+</html>

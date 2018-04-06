@@ -1,0 +1,32 @@
+{% load menu_tags %}
+<div data-sticky-container>
+    <div class="top-bar" data-sticky data-margin-top="0" id="example-menu">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li>
+                    {% for child in children %}
+                    <li class="child{% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+                        <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+                        {% if child.children %}
+                        <ul>
+                            {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu" data-magellan>
+                
+               
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+                    

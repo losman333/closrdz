@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<section id="first" data-magellan-target="first">
+
+<div class="grid-x grid-padding-x ">
+   {% placeholder "new projects" %}
+</div>
+
+</section>
+
+<hr>
+<section id="second" data-magellan-target="second">
+
+  
+        {% placeholder "recently completed" %}
+</div>
+</div>
+</section>
+<hr>
+<section id="third" data-magellan-target="third">
+    
+    
+    {% placeholder "updates" %}
+
+
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</ul>
+{% endblock content %}
