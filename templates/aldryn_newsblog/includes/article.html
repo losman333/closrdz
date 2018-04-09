@@ -1,6 +1,13 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
-<div class="grid-container">
+
+	<div class="grid-container">
+		<div class="grid-x grid-margin-x">
+			<div class="cell large-2">
+				
+			</div>
+			
+			<div class="cell large-8">
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
@@ -8,6 +15,7 @@
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id and detail_view %}
     <p>
+    	
     <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
         </p>
         {% endif %}
@@ -46,5 +54,8 @@
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
+        
 </article>
+</div>
+</div>
 </div>
