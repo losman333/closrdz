@@ -5,55 +5,22 @@
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<section id="first" data-magellan-target="first">
-
-
-		<div class="grid-container">
-			
-			<div class="grid-x ">
-				<div class="cell large-1">
-				</div>
-				<div class="cell large-9 ">
-					<h1>Clos RDZ</h1>
+<div class="grid-container">
    {% placeholder "new projects" %}
-   			</div>
- 		</div>
-		
+   		
 
-</section>
 
-<hr>
-<section id="second" data-magellan-target="second">
 
-  <div class="grid-container">
-			
-			<div class="grid-x">
-				<div class="cell large-1">
-				</div>
-				<div class="cell large-9 ">
-        {% placeholder "recently completed" %}
+				
+   {% placeholder "recently completed" %}
 
-</div>
- 		</div>
- 		</div>
-</section>
-<hr>
-<section id="third" data-magellan-target="third">
+ 		
+
+
     
     
-    {% placeholder "updates" %}
+   {% placeholder "updates" %}
 
 
-</section>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</ul>
-</div>
-
 {% endblock content %}

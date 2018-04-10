@@ -225,7 +225,7 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser', 'cell', 'grid-x', ]
+DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser', 'cell', 'grid-x', 'grid-container', 'grid-margin-x', 'grid-container-full', 'grid-padding-x', 'grid-y', 'grid-padding-y', ]
 
 DATABASES = {
     'default': {
