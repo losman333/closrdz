@@ -13,20 +13,25 @@
         {% render_block "css" %}
     </head>
     <body>
+    	
+    	 	 
+
         {% cms_toolbar %}
      
-                {% show_menu 0 100 100 100 "menu.html" %}
-              
-                            
-                            
-                      
+                
+               <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+              </div>                   
+                             
+         <div class="off-canvas-content" data-off-canvas-content>  
+         	{% show_menu 0 100 100 100 "menu.html" %}           
             {% block content %}{% endblock content %}
-        </div>
+          </div>
+       
         <script src="{% static 'js/vendor/foundation.js' %}"></script> 
         <script src="{% static 'js/app.js' %}"></script>
         {% render_block "js" %}
         
-        
+    
         
     </body>
 </html>
