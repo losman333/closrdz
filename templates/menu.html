@@ -1,13 +1,12 @@
 {% load menu_tags %}
 <div data-sticky-container>
-<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+	<div class="title-bar" data-sticky data-responsive-toggle="responsive-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-  <div class="title-bar-title">Menu</div>
+  <div class="title-bar-title">RDZ</div>
 </div>
-
-<div class="top-bar" id="responsive-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
+    <div class="top-bar" data-sticky data-margin-top="0" id="responsive-menu">
+        <div class="top-bar-left">
+            <ul class="menu">
                 <li>
                     {% for child in children %}
                     <li class="child{% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
@@ -26,7 +25,7 @@
     </div>
 </div>
 
-
+ 
 
 
                     
