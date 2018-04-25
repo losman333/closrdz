@@ -21,7 +21,7 @@
                 
                <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
                <uL>
-               {% show_menu 0 100 100 100 %} 
+               {% show_menu 1 100 100 100 %} 
                </uL>
               </div>                   
                              
@@ -36,7 +36,7 @@
         <script src="{% static 'js/vendor/foundation.js' %}"></script> 
         <script src="{% static 'js/app.js' %}"></script>
         {% render_block "js" %}
-        
+        {{ ALDRYN_SNAKE.render_tail }}
     
         
     </body>

@@ -132,6 +132,21 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
+                  'djangocms_admin_style',
+                  'django.contrib.auth',
+                  'django.contrib.contenttypes',
+                  'django.contrib.sessions',
+                  'django.contrib.admin',
+                  'django.contrib.sitemaps',
+                  'django.contrib.staticfiles',
+                  'django.contrib.messages',
+                  'django.contrib.sites',
+                 
+                  'cms',
+                  'menus',
+                  'sekizai',
+                  'treebeard',
+                  'djangocms_text_ckeditor',
                   'djangocms_style',
                   'djangocms_snippet',
                   'djangocms_googlemap',
@@ -141,12 +156,7 @@ INSTALLED_APPS = (
                   'djangocms_file',
                   'djangocms_picture',
                   'storages',
-                  'djangocms_admin_style',
-                  'djangocms_text_ckeditor',
-                  'cms',
-                  'menus',
-                  'sekizai',
-                  'treebeard',
+                  
                   'aldryn_apphooks_config',
                   'aldryn_categories',
                   'aldryn_common',
@@ -160,31 +170,16 @@ INSTALLED_APPS = (
                   'aldryn_forms.contrib.email_notifications',
                   'captcha',
                   'emailit',
-                  
                   'parler',
                   'sortedm2m',
                   'taggit',
                   'filer',
                   'reversion',
                   'easy_thumbnails',
-                  
-                  
-                  
-                  'django.contrib.auth',
-                  'django.contrib.contenttypes',
-                  'django.contrib.sessions',
-                  'django.contrib.admin',
-                  'django.contrib.sites',
-                  'django.contrib.sitemaps',
-                  'django.contrib.staticfiles',
-                  'django.contrib.messages',
                   'project1'
 )
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-}
+
 
 LANGUAGES = (
     ## Customize this
