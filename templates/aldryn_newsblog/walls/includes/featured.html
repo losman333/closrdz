@@ -9,10 +9,10 @@
         
 	
 	
-       	
+       	<div class="cell">
 	
 		
-      					 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 1200x600 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
+      					 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 600x600 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
       				      	
 	          
 		
@@ -64,7 +64,7 @@
       
         {% render_placeholder article.content language placeholder_language %}
       	
-  					
+  			</div>		
         
     {% endif %}
 
