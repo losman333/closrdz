@@ -1,13 +1,12 @@
 {% load i18n %}
 
 	
-       <div class="grid-x  small-up-2 medium-up-2 large-up-2">  
+       <div class="grid-x grid-margin-x ">  
 {% for article in articles_list %}
 
-  		<div class="cell">
-    {% include "aldryn_newsblog/includes/featured.html" with namespace=instance.app_config.namespace %}
-    	</div>
-	
+  		<div class="cell large-12">
+    {% include "aldryn_newsblog/Walls/includes/featured.html" with namespace=instance.app_config.namespace %}
+		</div>
 
 {% empty %}
     <p>{% trans "No items available" %}</p>
