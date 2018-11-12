@@ -10,17 +10,17 @@
 	
 	
        <div class="grid-x grid-margin-x">
-	<div class="cell large-6 medium-6 small-6">
-		
-      					 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 600x600 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
-      	</div>	
+	
       	
-    <div class="cell large-6 medium-6 small-6">
-	              <h2 class="center-text"><a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a></h1
+      	<div class="cell large-6 medium-6 small-6">
+	              <h2 class="center-text"><a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a></h1>
 	
 		</div>
 		
-            
+            <div class="cell large-6 medium-6 small-6">
+		
+      					 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 600x600 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
+      	</div>	
 
 	
 	
@@ -61,14 +61,14 @@
     {% endif %}
 
     
-<div class="cell large-6">
+
     {% if detail_view %}
     <br>
       
         {% render_placeholder article.content language placeholder_language %}
       	
   			
-        </div>
+       </div> 
     {% endif %}
 
 </article>
