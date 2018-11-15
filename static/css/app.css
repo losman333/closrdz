@@ -43,6 +43,12 @@ body {
   text-align: center;
   margin-bottom: 0.5rem; }
 
+.grid-container {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 65rem;
+  margin: 0 auto; }
+  
 .contact-us-section {
   padding: 2rem;
   background: #fefefe;

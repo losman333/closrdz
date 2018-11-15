@@ -4,13 +4,13 @@
 {% for article in articles_list %}
 
 
-       <div class="cell large-12">
+      
                       
                
   
     {% include "aldryn_newsblog/events/includes/featured.html" with namespace=instance.app_config.namespace %}
     
-	</div>
+		
 
 {% empty %}
     <p>{% trans "No items available" %}</p>
