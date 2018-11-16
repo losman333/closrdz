@@ -1,11 +1,11 @@
 {% load i18n %}
 
 	
-       <div class="grid-x grid-margin-x large-up-4  medium-up-4 small-up-4">  
+       <div class="grid-x grid-margin-x ">  
 {% for article in articles_list %}
 
   		<div class="cell ">
-    {% include "aldryn_newsblog/stories/includes/featured.html" with namespace=instance.app_config.namespace %}
+    {% include "aldryn_newsblog/paintings/includes/featured.html" with namespace=instance.app_config.namespace %}
 		</div>
 
 {% empty %}
