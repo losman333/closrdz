@@ -185,28 +185,7 @@ INSTALLED_APPS = (
 
 
 
-LANGUAGES = (
-    ## Customize this
-    ('en', gettext('en')),
-)
 
-CMS_LANGUAGES = {
-    ## Customize this
-    'default': {
-        'public': True,
-        'hide_untranslated': False,
-        'redirect_on_fallback': True,
-    },
-    1: [
-        {
-            'public': True,
-            'code': 'en',
-            'hide_untranslated': False,
-            'name': gettext('en'),
-            'redirect_on_fallback': True,
-        },
-    ],
-}
 
 CMS_TEMPLATES = (
                  # # Customize this
