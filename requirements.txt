@@ -19,12 +19,12 @@ cssselect==1.0.3
 cssutils==1.0.2
 dj-database-url==0.4.2
 dj-static==0.0.6
-Django==1.9.12
+Django==1.8.18
 django-absolute==0.3
 django-appconf==1.0.2
 django-appdata==0.1.6
 django-classy-tags==0.8.0
-django-cms==3.5.2
+django-cms==3.4.0
 django-emailit==0.2.3
 django-filer==1.3.0
 django-formtools==2.1
