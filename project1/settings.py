@@ -61,6 +61,10 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en'
+LANGUAGES = [
+    ('en', 'English'),
+   
+]
 
 TIME_ZONE = 'US/Pacific'
 
