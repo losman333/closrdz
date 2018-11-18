@@ -142,7 +142,7 @@ INSTALLED_APPS = (
                   'django.contrib.messages',
                   'django.contrib.sites',
                  
-                  'cms',
+                 
                   'menus',
                   'sekizai',
                   'treebeard',
