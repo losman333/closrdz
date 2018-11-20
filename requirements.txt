@@ -54,7 +54,7 @@ djangocms-link==2.1.2
 djangocms-picture==2.0.6
 djangocms-snippet==2.0.0
 djangocms-style==2.0.2
-djangocms-text-ckeditor==3.6.0
+djangocms-text-ckeditor==3.5.0
 djangocms-video==2.0.4
 docutils==0.14
 easy-thumbnails==2.4.2
