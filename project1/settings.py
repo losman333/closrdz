@@ -80,7 +80,7 @@ MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'project1', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
@@ -255,7 +255,7 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATICFILES_LOCATION = '/static/'
 
 
