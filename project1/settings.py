@@ -181,10 +181,12 @@ INSTALLED_APPS = (
 
 
 
-LANGUAGES = (
-    ## Customize this
-    ('en', gettext('en')),
-)
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = [
+    ('en', 'English'),
+   
+]
 
 CMS_LANGUAGES = {
     ## Customize this
