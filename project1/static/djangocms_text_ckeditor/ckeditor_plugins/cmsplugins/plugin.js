@@ -1,8 +1,4 @@
 (function ($) {
-    if (CKEDITOR && CKEDITOR.plugins && CKEDITOR.plugins.registered && CKEDITOR.plugins.registered.cmsplugins) {
-        return;
-    }
-
     /**
      * Determine if we should return `div` or `span` based on the
      * plugin markup.
@@ -13,7 +9,7 @@
      * @returns {String} div|span
      */
     function getFakePluginElement(pluginMarkup) {
-        var innerTags = (pluginMarkup.match(/<\s*([^>\s]+)[\s\S]*?>/) || [0, false]).splice(1);
+        var innerTags = (pluginMarkup.match(/<([\S]*?)\s[\s\S]*?>/) || [0, false]).splice(1);
 
         var containsAnyBlockLikeElements = innerTags.some(function (tag) {
             return tag && CKEDITOR.dtd.$block[tag];
@@ -173,8 +169,8 @@
             var definition = function () {
                 return {
                     title: '',
-                    minWidth: 200,
-                    minHeight: 200,
+                    minWidth: 600,
+                    minHeight: 300,
                     contents: [{
                         elements: [
                             {
@@ -185,30 +181,18 @@
                     }],
                     onOk: function () {
                         var iframe = $(CKEDITOR.dialog.getCurrent().parts.contents.$).find('iframe').contents();
-                        var iframeUrl = iframe[0].URL;
 
                         iframe.find('form').submit();
 
                         // catch the reload event and reattach
-                        var onSave = CMS.API.Helpers.onPluginSave;
+                        var reload = CMS.API.Helpers.reloadBrowser;
 
-                        CMS.API.Helpers.onPluginSave = function () {
+                        CMS.API.Helpers.reloadBrowser = function () {
                             CKEDITOR.dialog.getCurrent().hide();
-                            var data = CMS.API.Helpers.dataBridge;
-                            var addedChildPlugin = false;
 
-                            if (iframeUrl.match(/add-plugin/)) {
-                                addedChildPlugin = true;
-                            }
-                            // in case it's a fresh text plugin children don't have to be
-                            // deleted separately
-                            if (!that.options.delete_on_cancel && addedChildPlugin) {
-                                that.child_plugins.push(data.plugin_id);
-                            }
+                            that.insertPlugin(CMS.API.Helpers.dataBridge);
 
-                            that.insertPlugin(data);
-
-                            CMS.API.Helpers.onPluginSave = onSave;
+                            CMS.API.Helpers.reloadBrowser = reload;
                             return false;
                         };
                         return false;
@@ -247,7 +231,7 @@
             this.editor.addMenuGroup('cmspluginsGroup');
             this.editor.addMenuItem('cmspluginsItem', {
                 label: this.options.lang.edit,
-                icon: CMS.CKEditor.options.settings.static_url + '/ckeditor_plugins/cmsplugins/icons/cmsplugins.png',
+                icon: this.path + 'icons/cmsplugins.png',
                 command: 'cmspluginsEdit',
                 group: 'cmspluginsGroup'
             });
@@ -277,10 +261,9 @@
             $(dialog.parts.title.$).text(this.options.lang.edit);
 
             var textPluginUrl = window.location.href;
-            var path = encodeURIComponent(window.parent.location.pathname + window.parent.location.search);
             var childPluginUrl = textPluginUrl.replace(
                 /(add-plugin|edit-plugin).*$/,
-                'edit-plugin/' + id + '/?_popup=1&no_preview&cms_history=0&cms_path=' + path
+                'edit-plugin/' + id + '/?_popup=1&no_preview'
             );
 
             $(dialog.parts.contents.$).find('iframe').attr('src', childPluginUrl)
@@ -310,9 +293,7 @@
                 placeholder_id: this.options.placeholder_id,
                 plugin_type: item.attr('rel'),
                 plugin_parent: this.options.plugin_id,
-                plugin_language: this.options.plugin_language,
-                cms_path: window.parent.location.pathname,
-                cms_history: 0
+                plugin_language: this.options.plugin_language
             };
 
             that.addPluginDialog(item, data);
@@ -332,9 +313,8 @@
             $(dialog.getElement().$).addClass('cms-ckeditor-dialog');
             $(dialog.parts.title.$).text(this.options.lang.add);
             $(dialog.parts.contents.$).find('iframe').attr('src', this.options.add_plugin_url + '?' + $.param(data))
-                .on('load.addplugin', function () {
-                    var iframe = $(this);
-                    var contents = iframe.contents();
+                .bind('load', function () {
+                    var contents = $(this).contents();
 
                     contents.find('.submit-row').hide().end()
                         .find('#container').css('min-width', 0).css('padding', 0);
@@ -345,11 +325,7 @@
                         inputs = contents.find('#id_name');
                     }
 
-                    if (!(inputs.val() && inputs.val().trim())) {
-                        inputs.val(selected_text);
-                    }
-
-                    iframe.off('load.addplugin');
+                    inputs.val(selected_text);
                 });
         },
 
@@ -364,6 +340,12 @@
                     plugin: data.plugin_id
                 }
             }).done(function (res) {
+                // in case it's a fresh text plugin children don't have to be
+                // deleted separately
+                if (!that.options.delete_on_cancel) {
+                    that.child_plugins.push(data.plugin_id);
+                }
+
                 that.editor.insertHtml(res, 'unfiltered_html');
                 that.editor.fire('updateSnapshot');
             });
@@ -387,40 +369,35 @@
                 if (!that.options.delete_on_cancel && !that.child_plugins.length) {
                     return;
                 }
-                if (that.child_plugins.length) {
-                    e.preventDefault();
-                    CMS.API.Toolbar.showLoader();
-                    var data = {
-                        token: that.options.action_token
-                    };
+                e.preventDefault();
+                CMS.API.Toolbar.showLoader();
+                var data = {
+                    token: that.options.action_token
+                };
 
-                    if (!that.options.delete_on_cancel) {
-                        data.child_plugins = that.child_plugins;
-                    }
-
-                    $.ajax({
-                        method: 'POST',
-                        url: that.options.cancel_plugin_url,
-                        data: data,
-                        // use 'child_plugins' instead of default 'child_plugins[]'
-                        traditional: true
-                    }).done(function () {
-                        CMS.API.Helpers.removeEventListener(
-                            'modal-close.text-plugin.text-plugin-' + that.options.plugin_id
-                        );
-                        opts.instance.close();
-                    }).fail(function (res) {
-                        CMS.API.Messages.open({
-                            message: res.responseText + ' | ' + res.status + ' ' + res.statusText,
-                            delay: 0,
-                            error: true
-                        });
-                    });
+                if (!that.options.delete_on_cancel) {
+                    data.child_plugins = that.child_plugins;
                 }
+                $.ajax({
+                    method: 'POST',
+                    url: that.options.cancel_plugin_url,
+                    data: data,
+                    // use 'child_plugins' instead of default 'child_plugins[]'
+                    traditional: true
+                }).done(function () {
+                    CMS.API.Helpers.removeEventListener('modal-close.text-plugin-' + that.options.plugin_id);
+                    opts.instance.close();
+                }).fail(function (res) {
+                    CMS.API.Messages.open({
+                        message: res.responseText + ' | ' + res.status + ' ' + res.statusText,
+                        delay: 0,
+                        error: true
+                    });
+                });
             };
 
             CMS.API.Helpers.addEventListener(
-                'modal-close.text-plugin.text-plugin-' + that.options.plugin_id,
+                'modal-close.text-plugin-' + that.options.plugin_id,
                 cancelModalCallback
             );
         },
@@ -526,7 +503,7 @@
                 // unwrap them with jQuery (which uses browser mechanism) and then replace the divs back
                 if (newMarkup.match(/<cms-plugin[^>]*(?=data-cke-real-element-type=\"div)/)) {
                     // eslint-disable-next-line max-len
-                    var blockLevelPluginRegex = /<cms-plugin([^>]*(?=data-cke-real-element-type=\"div)[\s\S]*?>[\s\S]*?<\/)cms-plugin>/g;
+                    var blockLevelPluginRegex = /<cms-plugin([^>]*(?=data-cke-real-element-type=\"div).*?>.*?<\/)cms-plugin>/g;
 
                     var unwrappedMarkup = newMarkup.replace(blockLevelPluginRegex, '<div$1div>');
                     // have to create a wrapper, otherwise we won't be able to return markup back
