@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/3453ae1eb7b4e52d6c70a9420629fa95
+ * (2) http://ckeditor.com/builder/115de6b98f60e6eaa168eb78cf078e29
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/3453ae1eb7b4e52d6c70a9420629fa95
+ * (3) http://ckeditor.com/builder/download/115de6b98f60e6eaa168eb78cf078e29
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,27 +25,28 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'moono-lisa',
+	skin: 'moono',
 	preset: 'full',
 	ignore: [
-		'.DS_Store',
 		'.bender',
+		'bender.js',
+		'bender-err.log',
+		'bender-out.log',
+		'dev',
+		'.DS_Store',
 		'.editorconfig',
 		'.gitattributes',
 		'.gitignore',
+		'gruntfile.js',
 		'.idea',
 		'.jscsrc',
 		'.jshintignore',
 		'.jshintrc',
-		'.mailmap',
-		'bender-err.log',
-		'bender-out.log',
-		'bender.js',
-		'dev',
-		'gruntfile.js',
 		'less',
+		'.mailmap',
 		'node_modules',
 		'package.json',
+		'README.md',
 		'tests'
 	],
 	plugins : {
@@ -58,7 +59,6 @@ var CKBUILDER_CONFIG = {
 		'colorbutton' : 1,
 		'colordialog' : 1,
 		'contextmenu' : 1,
-		'copyformatting' : 1,
 		'dialogadvtab' : 1,
 		'div' : 1,
 		'elementspath' : 1,
@@ -114,7 +114,6 @@ var CKBUILDER_CONFIG = {
 	languages : {
 		'af' : 1,
 		'ar' : 1,
-		'az' : 1,
 		'bg' : 1,
 		'bn' : 1,
 		'bs' : 1,
@@ -160,7 +159,6 @@ var CKBUILDER_CONFIG = {
 		'nb' : 1,
 		'nl' : 1,
 		'no' : 1,
-		'oc' : 1,
 		'pl' : 1,
 		'pt' : 1,
 		'pt-br' : 1,

@@ -80,7 +80,7 @@ MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'project1', 'static'),
 )
 SITE_ID = 1
 
@@ -141,12 +141,12 @@ INSTALLED_APPS = (
                   'django.contrib.staticfiles',
                   'django.contrib.messages',
                   'django.contrib.sites',
-                  'djangocms_text_ckeditor',
+                 
                   'cms',
                   'menus',
                   'sekizai',
                   'treebeard',
-                  
+                  'djangocms_text_ckeditor',
                   'djangocms_style',
                   'djangocms_snippet',
                   'djangocms_googlemap',
@@ -181,12 +181,10 @@ INSTALLED_APPS = (
 
 
 
-LANGUAGE_CODE = 'en'
-
-LANGUAGES = [
-    ('en', 'English'),
-   
-]
+LANGUAGES = (
+    ## Customize this
+    ('en', gettext('en')),
+)
 
 CMS_LANGUAGES = {
     ## Customize this

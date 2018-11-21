@@ -11,20 +11,18 @@
             options: {
                 // ckeditor default settings, will be overwritten by CKEDITOR_SETTINGS
                 language: 'en',
-                skin: 'moono-lisa',
+                skin: 'moono',
                 toolbar_CMS: [
                     ['Undo', 'Redo'],
                     ['cmsplugins', 'cmswidget', '-', 'ShowBlocks'],
                     ['Format', 'Styles'],
                     ['TextColor', 'BGColor', '-', 'PasteText', 'PasteFromWord'],
-                    ['Scayt'],
                     ['Maximize', ''],
                     '/',
-                    ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+                    ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
                     ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
                     ['HorizontalRule'],
-                    ['NumberedList', 'BulletedList'],
-                    ['Outdent', 'Indent', '-', 'Blockquote', '-', 'Link', 'Unlink', '-', 'Table'],
+                    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Table'],
                     ['Source']
                 ],
                 toolbar_HTMLField: [
@@ -32,15 +30,13 @@
                     ['ShowBlocks'],
                     ['Format', 'Styles'],
                     ['TextColor', 'BGColor', '-', 'PasteText', 'PasteFromWord'],
-                    ['Scayt'],
                     ['Maximize', ''],
                     '/',
-                    ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+                    ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
                     ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
                     ['HorizontalRule'],
                     ['Link', 'Unlink'],
-                    ['NumberedList', 'BulletedList'],
-                    ['Outdent', 'Indent', '-', 'Blockqote', '-', 'Link', 'Unlink', '-', 'Table'],
+                    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Table'],
                     ['Source']
                 ],
 
@@ -61,7 +57,7 @@
 
                     // add extra plugins that we absolutely must have
                     this.options.extraPlugins = this.options.extraPlugins +=
-                        ',cmsplugins,cmswidget,cmsdialog,cmsresize,widget';
+                        ',cmsplugins,cmswidget,cmsresize,cmsdialog,widget';
 
                     document.createElement('cms-plugin');
                     CKEDITOR.dtd['cms-plugin'] = CKEDITOR.dtd.div;
@@ -94,22 +90,12 @@
                 if (this._isAloneInModal()) {
                     that.editor.resize('100%', win.CMS.$('.cms-modal-frame').height() - TOOLBAR_HEIGHT_WITH_PADDINGS);
                     this.editor.execCommand('maximize');
-
-                    $(window).on('resize.ckeditor', function () {
-                        that._repositionDialog(CKEDITOR.dialog.getCurrent(), win);
-                    }).trigger('resize.ckeditor');
-
                     win.CMS.API.Helpers.addEventListener('modal-maximized modal-restored', function () {
                         try {
-                            if (!$('.cke_maximized').length) {
-                                that.editor.resize(
-                                    '100%',
-                                    win.CMS.$('.cms-modal-frame').height() - TOOLBAR_HEIGHT_WITH_PADDINGS
-                                );
-                                setTimeout(function () {
-                                    that._repositionDialog(CKEDITOR.dialog.getCurrent(), win);
-                                }, 0);
-                            }
+                            that.editor.resize(
+                                '100%',
+                                win.CMS.$('.cms-modal-frame').height() - TOOLBAR_HEIGHT_WITH_PADDINGS
+                            );
                         } catch (e) {
                             // sometimes throws errors if modal with text plugin is closed too fast
                         }
@@ -147,43 +133,6 @@
                 // return true if the ckeditor is alone in a modal popup
                 return body.is('.app-djangocms_text_ckeditor.model-text') || // Django >= 1.7
                     body.is('.djangocms_text_ckeditor-text'); // Django < 1.7
-            },
-
-            /**
-             * @method _repositionDialog
-             * @private
-             * @param {CKEDITOR.dialog} dialog instance
-             */
-            _repositionDialog: function (dialog) {
-                var OFFSET = 80;
-
-                if (!dialog) {
-                    return;
-                }
-                var size = dialog.getSize();
-                var position = dialog.getPosition();
-                var win = CKEDITOR.document.getWindow();
-                var viewSize = win.getViewPaneSize();
-                var winWidth = viewSize.width;
-                var winHeight = viewSize.height;
-
-                if (position.x < 0) {
-                    dialog.move(0, position.y);
-                    position.x = 0;
-                }
-
-                if (position.y < 0) {
-                    dialog.move(position.x, 0);
-                    position.y = 0;
-                }
-
-                if (position.y + size.height > winHeight) {
-                    dialog.resize(size.width, winHeight - position.y - OFFSET);
-                }
-
-                if (position.x + size.width > winWidth) {
-                    dialog.resize(winWidth - position.x, size.height);
-                }
             }
         };
     });
