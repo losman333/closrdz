@@ -138,12 +138,12 @@ INSTALLED_APPS = (
                   'django.contrib.staticfiles',
                   'django.contrib.messages',
                   'django.contrib.sites',
-                 
+                 'djangocms_text_ckeditor',
                   'cms',
                   'menus',
                   'sekizai',
                   'treebeard',
-                  'djangocms_text_ckeditor',
+                  
                   'djangocms_style',
                   'djangocms_snippet',
                   'djangocms_googlemap',
