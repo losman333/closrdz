@@ -13,9 +13,7 @@ body {
 }
 
 .top-bar,
-.top-bar ul {
-    background-color: #FFFFFF; }
-/* Demo Styles */
+
 
 .demo-toggle-title {
     margin-top: 0.5rem;
@@ -23,6 +21,9 @@ body {
 
 .top-bar {
     width: 100%;
+    background:#ffffff;
+    border-bottom: .5px solid black;
+    
 }
 
 .menu .active {
