@@ -1,14 +1,9 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
 
-	<div class="grid-container">
-		<div class="grid-x grid-margin-x">
-			<div class="cell large-2">
-				
-			</div>
+	
 			
-			<div class="cell large-8">
-<article class="article
+			<article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
     
@@ -35,7 +30,10 @@
         </h2>
         <p>
     	
+    	<div class="cell ">
+
     <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+       
         </p>
         <p>{{ article.publishing_date|date }}</p>
         
@@ -54,8 +52,7 @@
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
-        
+         </div>
 </article>
-</div>
-</div>
-</div>
+
+
