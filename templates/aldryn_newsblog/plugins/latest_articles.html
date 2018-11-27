@@ -2,9 +2,11 @@
 
 
   
-    <div class="cell">
+    <div class="grid-x grid-margin-x large-up-2">
 {% for article in article_list %}
+<div class="cell">
     {% include "aldryn_newsblog/includes/latest.html" with namespace=instance.app_config.namespace %}
+    </div>
 {% empty %}
     <p>{% trans "No items available" %}</p>
 {% endfor %}
