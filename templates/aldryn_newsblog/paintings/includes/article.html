@@ -1,13 +1,9 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
 
-	<div class="grid-container">
-		<div class="grid-x grid-margin-x">
-			<div class="cell large-2">
-				
-			</div>
+	
 			
-			<div class="cell large-8">
+			
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
@@ -28,16 +24,14 @@
         
         <h2>
             {% if not detail_view %}
-            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a>
             {% else %}
             {% render_model article "title" %}
             {% endif %}
         </h2>
         <p>
     	
-    <img src="{% thumbnail article.featured_image 960x593  subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+    <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 400x400 crop  subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
         </p>
-        <p>{{ article.publishing_date|date }}</p>
         
         {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
         
@@ -56,6 +50,4 @@
         {% endif %}
         
 </article>
-</div>
-</div>
-</div>
+
