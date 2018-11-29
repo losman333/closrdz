@@ -23,19 +23,16 @@
         
         <h2>
             {% if not detail_view %}
-            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a>
             {% else %}
             {% render_model article "title" %}
             {% endif %}
         </h2>
         <p>
     	
-    	<div class="cell ">
 
-    <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+    	<a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 400x400 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
        
         </p>
-        <p>{{ article.publishing_date|date }}</p>
         
         {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
         
@@ -47,12 +44,10 @@
         </p>
         {% endif %}
         
-        {% render_model article "lead_in" %}
         
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
-         </div>
 </article>
 
 
