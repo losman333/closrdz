@@ -2,9 +2,8 @@
 {% load i18n %}
 
 {% block newsblog_content %}
-<div class="grid-x large-up-3">
     {% for article in article_list %}
-    <div class="cell">
+    
         {% include "aldryn_newsblog/includes/article.html" %}
     
     {% empty %}
@@ -12,6 +11,4 @@
     {% endfor %}
 
     {% include "aldryn_newsblog/includes/pagination.html" %}
-	</div>
-</div>
 {% endblock %}
