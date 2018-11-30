@@ -3,7 +3,8 @@
 
 	
 			
-			<article class="article
+			
+<article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
     
@@ -29,9 +30,7 @@
         </h2>
         <p>
     	
-
-    	<a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 400x400 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
-       
+    <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 500x309 crop  subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
         </p>
         
         {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
@@ -44,10 +43,11 @@
         </p>
         {% endif %}
         
+        {% render_model article "lead_in" %}
         
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
+        
 </article>
-
 
