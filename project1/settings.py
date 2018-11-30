@@ -138,8 +138,9 @@ INSTALLED_APPS = (
                   'django.contrib.staticfiles',
                   'django.contrib.messages',
                   'django.contrib.sites',
-                 'djangocms_text_ckeditor',
                   'cms',
+                  'djangocms_text_ckeditor',
+                  
                   'menus',
                   'sekizai',
                   'treebeard',
@@ -217,6 +218,13 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins': 'stylesheetparser',
+        'allowedContent': True,
+    }
+}
+
 DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser', 'cell', 
                            'grid-x', 'grid-container', 'grid-margin-x', 'grid-container-full', 
                            'grid-padding-x', 'grid-y', 'grid-padding-y', ]
@@ -252,13 +260,13 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATICFILES_LOCATION = 'static'
 
 
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+#STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
