@@ -25,7 +25,6 @@
         <h2>
             {% if not detail_view %}
             {% else %}
-            {% render_model article "title" %}
             {% endif %}
         </h2>
         <p>
@@ -43,10 +42,8 @@
         </p>
         {% endif %}
         
-        {% render_model article "lead_in" %}
         
         {% if detail_view %}
-        {% render_placeholder article.content language placeholder_language %}
         {% endif %}
         
 </article>
