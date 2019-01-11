@@ -1,8 +1,8 @@
 {% extends "aldryn_newsblog/base.html" %}
 {% load i18n %}
-<div class="grid-container ">
+
 {% block newsblog_content %}
-	
+	<div class="grid-container ">
 		<div class="grid-x grid-margin-x large-up-2 medium-up-2 small-12">
     {% for article in article_list %}
     		<div class="cell">
@@ -14,8 +14,7 @@
 		</div>
   			
 					{% include "aldryn_newsblog/includes/pagination.html" %}
-				
+					</div>
 
 
 {% endblock %}
-	</div>
