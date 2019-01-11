@@ -7,7 +7,7 @@
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
-    
+    <div class="cell">
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id and detail_view %}
     
@@ -45,6 +45,6 @@
         
         {% if detail_view %}
         {% endif %}
-        
+        </div>
 </article>
 
