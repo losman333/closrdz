@@ -2,20 +2,16 @@
 {% load i18n %}
 
 {% block newsblog_content %}
-		<div class="grid-container ">
-		<div class="grid-x grid-margin-x large-up-2 medium-up-2 small-12">
+	
     {% for article in article_list %}
-    		<div class="cell">
+    	
         		{% include "aldryn_newsblog/walls/includes/article.html" %}
-       		</div> 
+       		
     {% empty %}
         <p>{% trans "No items available" %}</p>
     {% endfor %}
-		</div>
-  			<div class="grid-x large-6 large-offset-4">
-				<div class="cell">
+		
+  		
 					{% include "aldryn_newsblog/includes/pagination.html" %}
-				</div>  
-			</div>
-	</div>
+		
 {% endblock %}
