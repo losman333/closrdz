@@ -3,18 +3,19 @@
 
 {% block newsblog_content %}
 
-	<div class="grid-container grid-x grid-margin-x large-up-2 medium-up-2 small-12 medium-offset-2">
+	<div class="grid-container" >
+		<div class="grid-x grid-margin-x large-up-2 medium-up-2 small-12 medium-offset-2">
     {% for article in article_list %}
-    <div class="cell">
+    		<div class="cell">
         {% include "aldryn_newsblog/walls/includes/article.html" %}
        
-    </div>
+    		</div>
     {% empty %}
         <p>{% trans "No items available" %}</p>
     {% endfor %}
-    
+    	</div>
 
     {% include "aldryn_newsblog/includes/pagination.html" %}
-    </div>
-
+    	
+	</div>
 {% endblock %}
