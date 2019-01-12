@@ -29,10 +29,11 @@
               </div>                   
                              
          <div class="off-canvas-content" data-off-canvas-content>  
-         	<div class="grid-container">
+         	<div class="grid-x grid-margin-x large-offset-1">
          	{% show_menu 0 100 100 100 "menu.html" %}   
-            
+            <div class="large-10">
             {% block content %}{% endblock content %}
+            </div>
       		 </div>
        </div>
        
