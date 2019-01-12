@@ -1,7 +1,13 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
 
-	
+	<div class="grid-container">
+		<div class="grid-x grid-margin-x">
+			<div class="cell large-2">
+				
+			</div>
+			
+			<div class="cell large-8">
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
@@ -50,4 +56,6 @@
         {% endif %}
         
 </article>
-
+</div>
+</div>
+</div>
