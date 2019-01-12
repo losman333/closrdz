@@ -7,7 +7,7 @@
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
-   
+    <div class="cell">
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id and detail_view %}
     
@@ -22,16 +22,15 @@
         </p>
         {% endif %}
         
-       
-        <p>
-    	<div class="cell">
-    <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 500x309 crop  subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
-        </p>
-         <h2>
+        <h2>
             {% if not detail_view %}
             {% else %}
             {% endif %}
         </h2>
+        <p>
+    	<div class="cell">
+    <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"><img src="{% thumbnail article.featured_image 500x309 crop  subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}"></a>
+        </p>
         </div>
         {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
         
@@ -46,6 +45,6 @@
         
         {% if detail_view %}
         {% endif %}
-       
+        </div>
 </article>
 
