@@ -1,6 +1,7 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
-<div class="cell ">
+<div class="cell">
+	<div class="card">
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
@@ -22,7 +23,7 @@
      
         <p>
     	
-    <img src="{% thumbnail article.featured_image 900x556 subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+    <img src="{% thumbnail article.featured_image 900x899 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
         </p>
         <div class="card-section">
            <h5>
@@ -53,4 +54,5 @@
         </div>
         </div>
 </article>
+</div>
 </div>
