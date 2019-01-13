@@ -5150,11 +5150,14 @@ a.thumbnail {
       .top-bar .top-bar-left {
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
-        margin-right: auto; }
+        margin-right: auto;
+        padding-left: 13.5em }
       .top-bar .top-bar-right {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
-        margin-left: auto; } }
+        margin-left: auto; 
+        margin-right: 12.5em;
+        } }
   @media screen and (max-width: 63.9375em) {
     .top-bar.stacked-for-medium {
       -ms-flex-wrap: wrap;
