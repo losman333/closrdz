@@ -1,15 +1,25 @@
 {% extends "aldryn_newsblog/base.html" %}
-{% load i18n %}
+{% load  cms_tags i18n %}
 
 {% block newsblog_content %}
+<br>
+<br>
+	<div class="grid-x grid-margin-x grid-margin-y">
+		 <div class="cell large-8">
     {% for article in article_list %}
-    
+   
         {% include "aldryn_newsblog/includes/article.html" %}
     
     {% empty %}
         <p>{% trans "No items available" %}</p>
         
     {% endfor %}
-
+	 </div>
+	 <div class="cell large-4">
+   {% static_placeholder 'sidebar' %}
+   </div>
     {% include "aldryn_newsblog/includes/pagination.html" %}
+   
+   
+   </div>
 {% endblock %}
