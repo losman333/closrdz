@@ -1,5 +1,8 @@
 {# Slide for a SlideCMSPlugin instance #}
 {% with link=instance.get_link image=instance.image %}
+
+<div class="cell">
+	
     {% if link %}
         <a href="{{ link }}"{% if instance.target %} target="{{ instance.target }}"{% endif %}>
             {% if image %}
@@ -16,3 +19,4 @@
 {% if instance.content %}
     {{ instance.content|safe }}
 {% endif %}
+</div>
