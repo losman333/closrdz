@@ -9,32 +9,39 @@
 <br>
 <br>
 <div class="grid-x large-offset-1 ">
-<div class="cell large-10">
-    {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
-</div>
-    {% static_placeholder "newsblog_social" %}
-<nav aria-label="Pagination">
-  <ul class="pagination text-center">
+		<div class="cell large-10">
+    		{% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
+		
+    
+	<nav aria-label="Pagination">
+  		<ul class="pagination text-center">
   	
-  	 {% if prev_article %}
+  	 		{% if prev_article %}
   	 
-  	  <li class="pagination-previous disabled"><a href="{{ prev_article.get_absolute_url }}">{% trans "Previous Article" %}</a></li>
+  	  			<li class="pagination-previous disabled">
+  	  				<a href="{{ prev_article.get_absolute_url }}">{% trans "Previous Article" %}</a>
+  	  			</li>
   	 
-  	 {% endif %}
-  	 <li><a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a></li>
-  	 {% if next_article %}
+  	 		{% endif %}
+  	 			<li>
+  	 				<a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a>
+  	 			</li>
+  	 		{% if next_article %}
   	 
-  	  <li class="pagination-next"><a href="{{ next_article.get_absolute_url }}">{% trans "Next Article" %}</a></li>
+  	  			<li class="pagination-next">
+  	  				<a href="{{ next_article.get_absolute_url }}">{% trans "Next Article" %}</a>
+  	  			</li>
   	 
   	 {% endif %}
   	
     
   
     	
-  </ul>
-</nav>
+  		</ul>
+	</nav>
+	</div>
 </div>
-</div>    
+ 
        
            
         
