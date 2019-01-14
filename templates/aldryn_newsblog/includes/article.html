@@ -5,7 +5,6 @@
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
-    <div class="grid-container	">
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id and detail_view %}
     
@@ -51,7 +50,6 @@
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
-        </div>
         </div>
 </article>
 </div>
