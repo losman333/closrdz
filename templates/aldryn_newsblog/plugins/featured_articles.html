@@ -11,7 +11,7 @@
                
             
             {% for article in articles_list %}
-   <li class="is-active orbit-slide">
+   			<li class="is-active orbit-slide">
        
                         <figure class="orbit-figure">
                             <img class="orbit-image">
@@ -19,11 +19,12 @@
     {% include "aldryn_newsblog/includes/featured.html" with namespace=instance.app_config.namespace %}
                          </figure>
             </li>
+   {% empty %}
     <p>{% trans "No items available" %}</p>
                         {% endfor %}
              
           
-   
+    <p>{% trans "No items available" %}</p>
 
        
         </ul>
