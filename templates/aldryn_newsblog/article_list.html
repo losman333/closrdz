@@ -4,16 +4,18 @@
 {% block newsblog_content %}
 <br>
 <br>
-	<div class="grid-x grid-margin-x grid-margin-y">
-		 <div class="cell large-8">
+	<div class="grid-x grid-margin-x grid-margin-y large-up-3	">
+		 
     {% for article in article_list %}
+    <div class="cell ">
         {% include "aldryn_newsblog/includes/latest.html" %}
+         </div>
     {% empty %}
         <p>{% trans "No items available" %}</p>
         
     {% endfor %}
-	 </div>
-	 <div class="cell large-4">
+	
+	 <div class="">
    {% static_placeholder 'sidebar' %}
    </div>
     {% include "aldryn_newsblog/includes/pagination.html" %}
