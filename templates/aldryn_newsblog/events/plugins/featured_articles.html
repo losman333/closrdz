@@ -7,12 +7,14 @@
 
 
       
-     	<div class="cell">
+     	
                
   	<li>	
+  		<div class="cell">
     {% include "aldryn_newsblog/events/includes/featured.html" with namespace=instance.app_config.namespace %}
-	</li>
 		</div>
+	</li>
+		
 {% empty %}
     <p>{% trans "No items available" %}</p>
 {% endfor %}
