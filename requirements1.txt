@@ -27,7 +27,7 @@ django-admin-sortable==2.0.22
 django-appconf==1.0.2
 django-appdata==0.1.6
 django-classy-tags==0.8.0
-django-cms==3.4.2
+django-cms==3.4.7
 django-emailit==0.2.2
 django-filer==1.2.7
 django-formtools==2.0
